@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/Drive/Dokumente/Projekte/POV/fpga/main/main_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="bip_utils_pkg_v2_0" />
+            <top_module name="cordic_v4_0_pack" />
+            <top_module name="main_tb" />
+            <top_module name="math_real" />
+            <top_module name="mult_gen_pkg_v11_0" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_signed" />
+            <top_module name="std_logic_textio" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="textio" />
+            <top_module name="vcomponents" />
+            <top_module name="vital_primitives" />
+            <top_module name="vital_timing" />
+            <top_module name="vpkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="55" />
+   <wvobject fp_name="/main_tb/clk_ext" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_ext</obj_property>
+      <obj_property name="ObjectShortName">clk_ext</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/data_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data_clk</obj_property>
+      <obj_property name="ObjectShortName">data_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/reset_ext" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset_ext</obj_property>
+      <obj_property name="ObjectShortName">reset_ext</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/data_syn" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">data_syn</obj_property>
+      <obj_property name="ObjectShortName">data_syn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/trigger" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">trigger</obj_property>
+      <obj_property name="ObjectShortName">trigger</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/do" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">do[15:0]</obj_property>
+      <obj_property name="ObjectShortName">do[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/co" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">co[15:0]</obj_property>
+      <obj_property name="ObjectShortName">co[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/start_led_array" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">start_led_array[0:3]</obj_property>
+      <obj_property name="ObjectShortName">start_led_array[0:3]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/end_led_array" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">end_led_array[0:3]</obj_property>
+      <obj_property name="ObjectShortName">end_led_array[0:3]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/ledgroup_pixel_next" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ledgroup_pixel_next[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ledgroup_pixel_next[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_state</obj_property>
+      <obj_property name="ObjectShortName">calc_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider44" type="divider">
+      <obj_property name="label">SELECT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_selected" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_selected</obj_property>
+      <obj_property name="ObjectShortName">calc_selected</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider45" type="divider">
+      <obj_property name="label">HEIGHTANDANGLE</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_wing_even_odd" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_wing_even_odd</obj_property>
+      <obj_property name="ObjectShortName">calc_wing_even_odd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/ledgroup_next_led" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ledgroup_next_led[0:3]</obj_property>
+      <obj_property name="ObjectShortName">ledgroup_next_led[0:3]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_height" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_height[6:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_height[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_cordic_x_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_cordic_x_in[13:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_cordic_x_in[13:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_div_dividend" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_div_dividend[29:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_div_dividend[29:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_div_divisor" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_div_divisor[19:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_div_divisor[19:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_div_quotient" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_div_quotient[29:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_div_quotient[29:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_div_result" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_div_result[9:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_div_result[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_angle" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_angle[11:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_angle[11:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_cordic_phase_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_cordic_phase_in[13:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_cordic_phase_in[13:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider46" type="divider">
+      <obj_property name="label">CORDIC_START</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_state</obj_property>
+      <obj_property name="ObjectShortName">calc_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_cordic_rfd" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_cordic_rfd</obj_property>
+      <obj_property name="ObjectShortName">calc_cordic_rfd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_cordic_nd" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_cordic_nd</obj_property>
+      <obj_property name="ObjectShortName">calc_cordic_nd</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider77" type="divider">
+      <obj_property name="label">CORDIC_DONE</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_state</obj_property>
+      <obj_property name="ObjectShortName">calc_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_cordic_rdy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_cordic_rdy</obj_property>
+      <obj_property name="ObjectShortName">calc_cordic_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_cordic_x_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_cordic_x_out[9:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_cordic_x_out[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_cordic_x" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_cordic_x[7:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_cordic_x[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_cordic_y_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_cordic_y_out[9:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_cordic_y_out[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_cordic_y" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_cordic_y[7:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_cordic_y[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider78" type="divider">
+      <obj_property name="label">ADDRESS</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_state</obj_property>
+      <obj_property name="ObjectShortName">calc_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_ram_addrb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_ram_addrb[14:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_ram_addrb[14:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider83" type="divider">
+      <obj_property name="label">READ</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_state</obj_property>
+      <obj_property name="ObjectShortName">calc_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_ram_doutb" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_ram_doutb[7:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_ram_doutb[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider84" type="divider">
+      <obj_property name="label">WRITE</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_state</obj_property>
+      <obj_property name="ObjectShortName">calc_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/ledgroup_pixel" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ledgroup_pixel[23:0]</obj_property>
+      <obj_property name="ObjectShortName">ledgroup_pixel[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/ledgroup_wing_slect" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">ledgroup_wing_slect[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ledgroup_wing_slect[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/ledgroup_pixel_write[0]" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">[0]</obj_property>
+      <obj_property name="ObjectShortName">ledgroup_pixel_write[0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/ledgroup_pixel_write[1]" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">[1]</obj_property>
+      <obj_property name="ObjectShortName">ledgroup_pixel_write[1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/ledgroup_pixel_write[2]" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">[2]</obj_property>
+      <obj_property name="ObjectShortName">ledgroup_pixel_write[2]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/ledgroup_pixel_write[3]" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">[3]</obj_property>
+      <obj_property name="ObjectShortName">ledgroup_pixel_write[3]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_wing" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_wing</obj_property>
+      <obj_property name="ObjectShortName">calc_wing</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_tb/uut/calc_groupstrigger" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">calc_groupstrigger[3:0]</obj_property>
+      <obj_property name="ObjectShortName">calc_groupstrigger[3:0]</obj_property>
+   </wvobject>
+</wave_config>

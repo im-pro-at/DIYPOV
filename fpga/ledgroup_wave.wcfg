@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/Drive/Dokumente/Projekte/POV/fpga/main/ledgroup_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="ledgroup_tb" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/ledgroup_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/bit_next" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">bit_next</obj_property>
+      <obj_property name="ObjectShortName">bit_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/bitscount" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">bitscount[4:0]</obj_property>
+      <obj_property name="ObjectShortName">bitscount[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/pixel_write" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">pixel_write</obj_property>
+      <obj_property name="ObjectShortName">pixel_write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/pixel" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pixel[23:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/wing_select" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wing_select[1:0]</obj_property>
+      <obj_property name="ObjectShortName">wing_select[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/clk_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/uut/bal_state" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">bal_state</obj_property>
+      <obj_property name="ObjectShortName">bal_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/uut/bal_state_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">bal_state_next</obj_property>
+      <obj_property name="ObjectShortName">bal_state_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/uut/bal_count" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">bal_count</obj_property>
+      <obj_property name="ObjectShortName">bal_count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/uut/bal_count_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">bal_count_next</obj_property>
+      <obj_property name="ObjectShortName">bal_count_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/uut/bal_ledcount" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">bal_ledcount</obj_property>
+      <obj_property name="ObjectShortName">bal_ledcount</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/uut/bal_ledcount_next" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">bal_ledcount_next</obj_property>
+      <obj_property name="ObjectShortName">bal_ledcount_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/uut/zerobit" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">zerobit</obj_property>
+      <obj_property name="ObjectShortName">zerobit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/uut/onebit" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">onebit</obj_property>
+      <obj_property name="ObjectShortName">onebit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/do" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">do[3:0]</obj_property>
+      <obj_property name="ObjectShortName">do[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/uut/pixel_next_int" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">pixel_next_int</obj_property>
+      <obj_property name="ObjectShortName">pixel_next_int</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/pixel_next" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">pixel_next</obj_property>
+      <obj_property name="ObjectShortName">pixel_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ledgroup_tb/next_led" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">next_led[6:0]</obj_property>
+      <obj_property name="ObjectShortName">next_led[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
