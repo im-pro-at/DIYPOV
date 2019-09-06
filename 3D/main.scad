@@ -77,7 +77,7 @@ union(){
 
     wood_w=500;
     wood_h=160;
-    wood_d=9;
+    wood_d=10;
     translate([0,0,-30]){
         color(wood)
         {
