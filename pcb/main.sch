@@ -8,34 +8,34 @@
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
-<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
-<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
-<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
-<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
-<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
-<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
-<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
-<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
-<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
-<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
-<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
-<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
-<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
-<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
-<layer number="17" name="Pads" color="2" fill="1" visible="no" active="no"/>
-<layer number="18" name="Vias" color="2" fill="1" visible="no" active="no"/>
-<layer number="19" name="Unrouted" color="6" fill="1" visible="no" active="no"/>
-<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="no"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="no"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="no"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="no"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="no"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="no"/>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="yes" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="yes" active="no"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="yes" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="yes" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="yes" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="yes" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="yes" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="yes" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="yes" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="yes" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="yes" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="yes" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="yes" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="yes" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="no"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="no"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="no"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="no"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="no"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="no"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="no"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="no"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="no"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="no"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="no"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="no"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="no"/>
@@ -44,8 +44,8 @@
 <layer number="34" name="bFinish" color="6" fill="6" visible="no" active="no"/>
 <layer number="35" name="tGlue" color="7" fill="4" visible="no" active="no"/>
 <layer number="36" name="bGlue" color="7" fill="5" visible="no" active="no"/>
-<layer number="37" name="tTest" color="7" fill="1" visible="no" active="no"/>
-<layer number="38" name="bTest" color="7" fill="1" visible="no" active="no"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="yes" active="no"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="yes" active="no"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="no"/>
 <layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="no"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="no"/>
@@ -53,17 +53,17 @@
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="no"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="no"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="no"/>
-<layer number="46" name="Milling" color="3" fill="1" visible="no" active="no"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="no"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="no"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="no"/>
-<layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
-<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
-<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
-<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
-<layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="yes" active="no"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="no"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="no"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="no"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="yes" active="no"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="yes" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="yes" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="yes" active="no"/>
+<layer number="57" name="tCAD" color="7" fill="1" visible="yes" active="no"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
@@ -11335,27 +11335,28 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <wire x1="21.59" y1="-16.764" x2="21.59" y2="0.889" width="0.1524" layer="21"/>
 <wire x1="21.59" y1="0.889" x2="-0.635" y2="0.889" width="0.1524" layer="21"/>
 <wire x1="-0.635" y1="-16.764" x2="-0.635" y2="0.889" width="0.1524" layer="21"/>
-<pad name="GND1" x="0.635" y="0" drill="0.8128" rot="R90"/>
-<pad name="GND2" x="0.635" y="-1.905" drill="0.8128" rot="R90"/>
-<pad name="GND3" x="20.305" y="0" drill="0.8128" rot="R90"/>
-<pad name="GND4" x="20.305" y="-1.905" drill="0.8128" rot="R90"/>
-<pad name="VIN1" x="0.635" y="-13.775" drill="0.8128" rot="R90"/>
-<pad name="VIN2" x="0.635" y="-15.64" drill="0.8128" rot="R90"/>
-<pad name="VOUT1" x="20.305" y="-13.775" drill="0.8128" rot="R90"/>
-<pad name="VOUT2" x="20.305" y="-15.64" drill="0.8128" rot="R90"/>
-<text x="3.81" y="-5.334" size="1.778" layer="25" ratio="10">&gt;NAME</text>
-<text x="3.683" y="-11.176" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
-<wire x1="5.08" y1="-7.62" x2="15.24" y2="-7.62" width="0.127" layer="21"/>
-<wire x1="13.97" y1="-6.35" x2="15.24" y2="-7.62" width="0.127" layer="21"/>
-<wire x1="15.24" y1="-7.62" x2="13.97" y2="-8.89" width="0.127" layer="21"/>
-<circle x="17.78" y="0" radius="0.6" width="0.127" layer="21"/>
-<text x="17.48" y="-0.535" size="1.27" layer="21">-</text>
-<circle x="17.9" y="-15.7" radius="0.6" width="0.127" layer="21"/>
-<text x="17.4" y="-16.335" size="1.27" layer="21">+</text>
-<text x="2.54" y="-2.54" size="1.27" layer="21">IN-</text>
-<text x="2.54" y="-13.97" size="1.27" layer="21">IN+</text>
-<text x="13.97" y="-2.54" size="1.27" layer="21">OUT-</text>
-<text x="13.97" y="-13.97" size="1.27" layer="21">OUT+</text>
+<pad name="GND1" x="0.635" y="0" drill="1" rot="R90"/>
+<pad name="GND2" x="0.635" y="-1.905" drill="1" rot="R90"/>
+<pad name="GND3" x="20.305" y="0" drill="1" rot="R90"/>
+<pad name="GND4" x="20.305" y="-1.905" drill="1" rot="R90"/>
+<pad name="VIN1" x="0.635" y="-13.775" drill="1" rot="R90"/>
+<pad name="VIN2" x="0.635" y="-15.64" drill="1" rot="R90"/>
+<pad name="VOUT1" x="20.305" y="-13.775" drill="1" rot="R90"/>
+<pad name="VOUT2" x="20.305" y="-15.64" drill="1" rot="R90"/>
+<text x="21.189" y="-12.32" size="1.778" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="1.456" y="-12.517" size="1.778" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+<text x="2.54" y="-0.87" size="1.27" layer="21">IN-</text>
+<text x="2.54" y="-16.51" size="1.27" layer="21">IN+</text>
+<text x="14.57" y="-0.87" size="1.27" layer="21">OUT-</text>
+<text x="13.97" y="-16.51" size="1.27" layer="21">OUT+</text>
+<wire x1="1.47" y1="-1.375" x2="19.6" y2="-1.375" width="0.127" layer="21"/>
+<wire x1="19.6" y1="-1.375" x2="19.6" y2="-14.83" width="0.127" layer="21"/>
+<wire x1="19.6" y1="-14.83" x2="1.47" y2="-14.83" width="0.127" layer="21"/>
+<wire x1="1.47" y1="-14.83" x2="1.47" y2="-1.375" width="0.127" layer="21"/>
+<pad name="VIN3" x="4.21" y="-13.26" drill="1"/>
+<pad name="VOUT3" x="16.91" y="-13.26" drill="1"/>
+<pad name="GND6" x="16.91" y="-3.1" drill="1"/>
+<pad name="GND5" x="4.21" y="-3.1" drill="1"/>
 </package>
 <package name="DIL48">
 <wire x1="-29.845" y1="-6.604" x2="29.845" y2="-6.604" width="0.1524" layer="21"/>
@@ -11689,9 +11690,9 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <devices>
 <device name="" package="DCDC">
 <connects>
-<connect gate="G$1" pin="GND" pad="GND1 GND2 GND3 GND4"/>
-<connect gate="G$1" pin="VIN" pad="VIN1 VIN2"/>
-<connect gate="G$1" pin="VOUT" pad="VOUT1 VOUT2"/>
+<connect gate="G$1" pin="GND" pad="GND1 GND2 GND3 GND4 GND5 GND6"/>
+<connect gate="G$1" pin="VIN" pad="VIN1 VIN2 VIN3"/>
+<connect gate="G$1" pin="VOUT" pad="VOUT1 VOUT2 VOUT3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -16416,7 +16417,6 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <part name="SUPPLY2" library="supply2" deviceset="+5V/2" device=""/>
 <part name="FRAME4" library="frames" deviceset="A4L-LOC" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
-<part name="DCDC2" library="diypov" deviceset="DCDC_5V" device=""/>
 <part name="DCDC1" library="diypov" deviceset="DCDC_5V" device=""/>
 <part name="SUPPLY4" library="supply2" deviceset="+5V/3" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="+5V/4" device=""/>
@@ -16479,7 +16479,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <part name="LOGO1" library="ohw-logo" deviceset="OSHW_LOGO_FILL" device="X0350-NT"/>
 <part name="POWER_TEST" library="microbuilder" deviceset="DCBARREL" device="PTH"/>
 <part name="HALL" library="diypov" deviceset="HALL" device=""/>
-<part name="U$1" library="im-pro-logo" deviceset="LOGO" device="50MM" value="LOGO50MM"/>
+<part name="U$2" library="im-pro-logo" deviceset="LOGO" device="20MM" value="LOGO20MM"/>
 <part name="SUPPLY13" library="supply2" deviceset="+5V/1" device=""/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
 <part name="SUPPLY14" library="supply2" deviceset="+5V/2" device=""/>
@@ -16489,9 +16489,10 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <part name="SUPPLY16" library="supply2" deviceset="+5V/4" device=""/>
 <part name="GND25" library="supply1" deviceset="GND" device=""/>
 <part name="GND26" library="supply1" deviceset="GND" device=""/>
-<part name="U$2" library="ESP32-DEVKITV1" deviceset="ESP32DEVKITV1" device=""/>
+<part name="ESP" library="ESP32-DEVKITV1" deviceset="ESP32DEVKITV1" device=""/>
 <part name="P+8" library="supply1" deviceset="+12V" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
+<part name="DCDC2" library="diypov" deviceset="DCDC_5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -16513,7 +16514,6 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <instance part="SUPPLY1" gate="G$1" x="205.74" y="157.48"/>
 <instance part="SUPPLY2" gate="G$1" x="205.74" y="121.92"/>
 <instance part="GND1" gate="1" x="116.84" y="63.5" rot="R270"/>
-<instance part="DCDC2" gate="G$1" x="185.42" y="114.3"/>
 <instance part="DCDC1" gate="G$1" x="185.42" y="149.86"/>
 <instance part="SUPPLY4" gate="G$1" x="205.74" y="86.36"/>
 <instance part="SUPPLY5" gate="G$1" x="205.74" y="53.34"/>
@@ -16548,11 +16548,12 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <instance part="LOGO1" gate="G$1" x="167.64" y="20.32"/>
 <instance part="POWER_TEST" gate="G$1" x="121.92" y="121.92"/>
 <instance part="HALL" gate="G$1" x="129.54" y="60.96" rot="R270"/>
-<instance part="U$1" gate="G$1" x="180.34" y="10.16"/>
+<instance part="U$2" gate="G$1" x="180.34" y="10.16"/>
 <instance part="GND26" gate="1" x="30.48" y="147.32" rot="R270"/>
-<instance part="U$2" gate="G$1" x="60.96" y="127" rot="R270"/>
+<instance part="ESP" gate="G$1" x="60.96" y="127" rot="R270"/>
 <instance part="P+8" gate="1" x="91.44" y="149.86" rot="R270"/>
 <instance part="GND12" gate="1" x="93.98" y="147.32" rot="R90"/>
+<instance part="DCDC2" gate="G$1" x="185.42" y="114.3"/>
 </instances>
 <busses>
 </busses>
@@ -16574,9 +16575,9 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <wire x1="185.42" y1="134.62" x2="185.42" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="DCDC2" gate="G$1" pin="GND"/>
 <pinref part="GND144" gate="1" pin="GND"/>
 <wire x1="185.42" y1="99.06" x2="185.42" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="DCDC2" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="DCDC3" gate="G$1" pin="GND"/>
@@ -16647,12 +16648,12 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <pinref part="GND26" gate="1" pin="GND"/>
 <wire x1="43.18" y1="147.32" x2="33.02" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="GND"/>
+<pinref part="ESP" gate="G$1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="91.44" y1="147.32" x2="78.74" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="GND1"/>
+<pinref part="ESP" gate="G$1" pin="GND1"/>
 </segment>
 </net>
 <net name="+12V" class="0">
@@ -16720,7 +16721,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <pinref part="P+8" gate="1" pin="+12V"/>
 <wire x1="88.9" y1="149.86" x2="78.74" y2="149.86" width="0.1524" layer="91"/>
-<pinref part="U$2" gate="G$1" pin="VIN"/>
+<pinref part="ESP" gate="G$1" pin="VIN"/>
 </segment>
 </net>
 <net name="+5V/1" class="0">
@@ -16740,11 +16741,11 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <pinref part="SUPPLY2" gate="G$1" pin="+5V/2"/>
 <wire x1="205.74" y1="119.38" x2="205.74" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="116.84" x2="195.58" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="DCDC2" gate="G$1" pin="VOUT"/>
 <pinref part="C9" gate="G$1" pin="+"/>
 <wire x1="218.44" y1="109.22" x2="218.44" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="218.44" y1="116.84" x2="205.74" y2="116.84" width="0.1524" layer="91"/>
 <junction x="205.74" y="116.84"/>
+<pinref part="DCDC2" gate="G$1" pin="VOUT"/>
 </segment>
 </net>
 <net name="C1" class="0">
@@ -16920,7 +16921,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="129.54" x2="33.02" y2="129.54" width="0.1524" layer="91"/>
 <label x="33.02" y="129.54" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO18"/>
+<pinref part="ESP" gate="G$1" pin="IO18"/>
 </segment>
 </net>
 <net name="IO23" class="0">
@@ -16932,7 +16933,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="114.3" x2="33.02" y2="114.3" width="0.1524" layer="91"/>
 <label x="33.02" y="114.3" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO23"/>
+<pinref part="ESP" gate="G$1" pin="IO23"/>
 </segment>
 </net>
 <net name="IO25" class="0">
@@ -16944,7 +16945,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="91.44" y1="132.08" x2="78.74" y2="132.08" width="0.1524" layer="91"/>
 <label x="86.36" y="132.08" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO25"/>
+<pinref part="ESP" gate="G$1" pin="IO25"/>
 </segment>
 </net>
 <net name="IO33" class="0">
@@ -16956,7 +16957,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="91.44" y1="129.54" x2="78.74" y2="129.54" width="0.1524" layer="91"/>
 <label x="86.36" y="129.54" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO33"/>
+<pinref part="ESP" gate="G$1" pin="IO33"/>
 </segment>
 </net>
 <net name="IO15" class="0">
@@ -16968,7 +16969,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="144.78" x2="33.02" y2="144.78" width="0.1524" layer="91"/>
 <label x="33.02" y="144.78" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO15"/>
+<pinref part="ESP" gate="G$1" pin="IO15"/>
 </segment>
 </net>
 <net name="IO16" class="0">
@@ -16980,7 +16981,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="137.16" x2="33.02" y2="137.16" width="0.1524" layer="91"/>
 <label x="33.02" y="137.16" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO16"/>
+<pinref part="ESP" gate="G$1" pin="IO16"/>
 </segment>
 </net>
 <net name="IO14" class="0">
@@ -16992,7 +16993,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="91.44" y1="139.7" x2="78.74" y2="139.7" width="0.1524" layer="91"/>
 <label x="86.36" y="139.7" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO14"/>
+<pinref part="ESP" gate="G$1" pin="IO14"/>
 </segment>
 </net>
 <net name="IO32" class="0">
@@ -17004,7 +17005,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="91.44" y1="127" x2="78.74" y2="127" width="0.1524" layer="91"/>
 <label x="86.36" y="127" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO32"/>
+<pinref part="ESP" gate="G$1" pin="IO32"/>
 </segment>
 </net>
 <net name="IO21" class="0">
@@ -17016,7 +17017,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="124.46" x2="33.02" y2="124.46" width="0.1524" layer="91"/>
 <label x="33.02" y="124.46" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO21"/>
+<pinref part="ESP" gate="G$1" pin="IO21"/>
 </segment>
 </net>
 <net name="IO4" class="0">
@@ -17028,7 +17029,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="139.7" x2="33.02" y2="139.7" width="0.1524" layer="91"/>
 <label x="33.02" y="139.7" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO4"/>
+<pinref part="ESP" gate="G$1" pin="IO4"/>
 </segment>
 </net>
 <net name="IO17" class="0">
@@ -17040,7 +17041,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="134.62" x2="33.02" y2="134.62" width="0.1524" layer="91"/>
 <label x="33.02" y="134.62" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO17"/>
+<pinref part="ESP" gate="G$1" pin="IO17"/>
 </segment>
 </net>
 <net name="IO5" class="0">
@@ -17052,7 +17053,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="132.08" x2="33.02" y2="132.08" width="0.1524" layer="91"/>
 <label x="33.02" y="132.08" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO5"/>
+<pinref part="ESP" gate="G$1" pin="IO5"/>
 </segment>
 </net>
 <net name="IO19" class="0">
@@ -17064,7 +17065,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="127" x2="33.02" y2="127" width="0.1524" layer="91"/>
 <label x="33.02" y="127" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO19"/>
+<pinref part="ESP" gate="G$1" pin="IO19"/>
 </segment>
 </net>
 <net name="IO22" class="0">
@@ -17076,7 +17077,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="116.84" x2="33.02" y2="116.84" width="0.1524" layer="91"/>
 <label x="33.02" y="116.84" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO22"/>
+<pinref part="ESP" gate="G$1" pin="IO22"/>
 </segment>
 </net>
 <net name="IO27" class="0">
@@ -17088,7 +17089,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="91.44" y1="137.16" x2="78.74" y2="137.16" width="0.1524" layer="91"/>
 <label x="86.36" y="137.16" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO27"/>
+<pinref part="ESP" gate="G$1" pin="IO27"/>
 </segment>
 </net>
 <net name="IO26" class="0">
@@ -17100,7 +17101,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="78.74" y1="134.62" x2="91.44" y2="134.62" width="0.1524" layer="91"/>
 <label x="86.36" y="134.62" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO26"/>
+<pinref part="ESP" gate="G$1" pin="IO26"/>
 </segment>
 </net>
 <net name="N$26" class="0">
@@ -17124,7 +17125,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="78.74" y1="124.46" x2="91.44" y2="124.46" width="0.1524" layer="91"/>
 <label x="86.36" y="124.46" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO35"/>
+<pinref part="ESP" gate="G$1" pin="IO35"/>
 </segment>
 </net>
 <net name="IO34" class="0">
@@ -17136,7 +17137,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="78.74" y1="121.92" x2="91.44" y2="121.92" width="0.1524" layer="91"/>
 <label x="86.36" y="121.92" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO34"/>
+<pinref part="ESP" gate="G$1" pin="IO34"/>
 </segment>
 </net>
 <net name="IO39" class="0">
@@ -17148,7 +17149,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="78.74" y1="119.38" x2="91.44" y2="119.38" width="0.1524" layer="91"/>
 <label x="86.36" y="119.38" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="VN"/>
+<pinref part="ESP" gate="G$1" pin="VN"/>
 </segment>
 </net>
 <net name="IO2" class="0">
@@ -17160,7 +17161,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="142.24" x2="33.02" y2="142.24" width="0.1524" layer="91"/>
 <label x="33.02" y="142.24" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO2"/>
+<pinref part="ESP" gate="G$1" pin="IO2"/>
 </segment>
 </net>
 <net name="IO12" class="0">
@@ -17172,7 +17173,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="78.74" y1="142.24" x2="91.44" y2="142.24" width="0.1524" layer="91"/>
 <label x="86.36" y="142.24" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO12"/>
+<pinref part="ESP" gate="G$1" pin="IO12"/>
 </segment>
 </net>
 <net name="IO36" class="0">
@@ -17184,7 +17185,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="78.74" y1="116.84" x2="91.44" y2="116.84" width="0.1524" layer="91"/>
 <label x="86.36" y="116.84" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="VP"/>
+<pinref part="ESP" gate="G$1" pin="VP"/>
 </segment>
 </net>
 <net name="IO1" class="0">
@@ -17196,7 +17197,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="119.38" x2="33.02" y2="119.38" width="0.1524" layer="91"/>
 <label x="33.02" y="119.38" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO1"/>
+<pinref part="ESP" gate="G$1" pin="IO1"/>
 </segment>
 </net>
 <net name="IO3" class="0">
@@ -17208,7 +17209,7 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <segment>
 <wire x1="43.18" y1="121.92" x2="33.02" y2="121.92" width="0.1524" layer="91"/>
 <label x="33.02" y="121.92" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="IO3"/>
+<pinref part="ESP" gate="G$1" pin="IO3"/>
 </segment>
 </net>
 <net name="N$1" class="0">

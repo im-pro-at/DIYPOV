@@ -15717,27 +15717,28 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <wire x1="21.59" y1="-16.764" x2="21.59" y2="0.889" width="0.1524" layer="21"/>
 <wire x1="21.59" y1="0.889" x2="-0.635" y2="0.889" width="0.1524" layer="21"/>
 <wire x1="-0.635" y1="-16.764" x2="-0.635" y2="0.889" width="0.1524" layer="21"/>
-<pad name="GND1" x="0.635" y="0" drill="0.8128" rot="R90"/>
-<pad name="GND2" x="0.635" y="-1.905" drill="0.8128" rot="R90"/>
-<pad name="GND3" x="20.305" y="0" drill="0.8128" rot="R90"/>
-<pad name="GND4" x="20.305" y="-1.905" drill="0.8128" rot="R90"/>
-<pad name="VIN1" x="0.635" y="-13.775" drill="0.8128" rot="R90"/>
-<pad name="VIN2" x="0.635" y="-15.64" drill="0.8128" rot="R90"/>
-<pad name="VOUT1" x="20.305" y="-13.775" drill="0.8128" rot="R90"/>
-<pad name="VOUT2" x="20.305" y="-15.64" drill="0.8128" rot="R90"/>
-<text x="3.81" y="-5.334" size="1.778" layer="25" ratio="10">&gt;NAME</text>
-<text x="3.683" y="-11.176" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
-<wire x1="5.08" y1="-7.62" x2="15.24" y2="-7.62" width="0.127" layer="21"/>
-<wire x1="13.97" y1="-6.35" x2="15.24" y2="-7.62" width="0.127" layer="21"/>
-<wire x1="15.24" y1="-7.62" x2="13.97" y2="-8.89" width="0.127" layer="21"/>
-<circle x="17.78" y="0" radius="0.6" width="0.127" layer="21"/>
-<text x="17.48" y="-0.535" size="1.27" layer="21">-</text>
-<circle x="17.9" y="-15.7" radius="0.6" width="0.127" layer="21"/>
-<text x="17.4" y="-16.335" size="1.27" layer="21">+</text>
-<text x="16.51" y="-2.54" size="1.27" layer="21">IN-</text>
-<text x="16.51" y="-13.97" size="1.27" layer="21">IN+</text>
-<text x="2.54" y="-2.54" size="1.27" layer="21">OUT-</text>
-<text x="2.54" y="-13.97" size="1.27" layer="21">OUT+</text>
+<pad name="GND1" x="0.635" y="0" drill="1" rot="R90"/>
+<pad name="GND2" x="0.635" y="-1.905" drill="1" rot="R90"/>
+<pad name="GND3" x="20.305" y="0" drill="1" rot="R90"/>
+<pad name="GND4" x="20.305" y="-1.905" drill="1" rot="R90"/>
+<pad name="VIN1" x="0.635" y="-13.775" drill="1" rot="R90"/>
+<pad name="VIN2" x="0.635" y="-15.64" drill="1" rot="R90"/>
+<pad name="VOUT1" x="20.305" y="-13.775" drill="1" rot="R90"/>
+<pad name="VOUT2" x="20.305" y="-15.64" drill="1" rot="R90"/>
+<text x="21.189" y="-12.32" size="1.778" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="1.456" y="-12.517" size="1.778" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+<text x="2.54" y="-0.87" size="1.27" layer="21">IN-</text>
+<text x="2.54" y="-16.51" size="1.27" layer="21">IN+</text>
+<text x="14.57" y="-0.87" size="1.27" layer="21">OUT-</text>
+<text x="13.97" y="-16.51" size="1.27" layer="21">OUT+</text>
+<wire x1="1.47" y1="-1.375" x2="19.6" y2="-1.375" width="0.127" layer="21"/>
+<wire x1="19.6" y1="-1.375" x2="19.6" y2="-14.83" width="0.127" layer="21"/>
+<wire x1="19.6" y1="-14.83" x2="1.47" y2="-14.83" width="0.127" layer="21"/>
+<wire x1="1.47" y1="-14.83" x2="1.47" y2="-1.375" width="0.127" layer="21"/>
+<pad name="VIN3" x="4.21" y="-13.26" drill="1"/>
+<pad name="VOUT3" x="16.91" y="-13.26" drill="1"/>
+<pad name="GND6" x="16.91" y="-3.1" drill="1"/>
+<pad name="GND5" x="4.21" y="-3.1" drill="1"/>
 </package>
 </packages>
 <symbols>
@@ -15761,9 +15762,9 @@ standard rectifier, 3 A, 50 V (Motorola)</description>
 <devices>
 <device name="" package="DCDC">
 <connects>
-<connect gate="G$1" pin="GND" pad="GND1 GND2 GND3 GND4"/>
-<connect gate="G$1" pin="VIN" pad="VIN1 VIN2"/>
-<connect gate="G$1" pin="VOUT" pad="VOUT1 VOUT2"/>
+<connect gate="G$1" pin="GND" pad="GND1 GND2 GND3 GND4 GND5 GND6"/>
+<connect gate="G$1" pin="VIN" pad="VIN1 VIN2 VIN3"/>
+<connect gate="G$1" pin="VOUT" pad="VOUT1 VOUT2 VOUT3"/>
 </connects>
 <technologies>
 <technology name=""/>
