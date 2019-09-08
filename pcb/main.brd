@@ -8,7 +8,7 @@
 </settings>
 <grid distance="10" unitdist="mil" unit="mm" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mm"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -23,19 +23,19 @@
 <layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -3031,7 +3031,7 @@ Please make sure your boards conform to these design rules.
 <attribute name="NAME" x="5.588" y="21.082" size="1.778" layer="26" ratio="10" rot="MR0"/>
 <attribute name="VALUE" x="5.715" y="24.13" size="1.778" layer="28" ratio="10" rot="MR0"/>
 </element>
-<element name="C1" library="rcl" package="E3,5-8" value="" x="-39.624" y="20.574" smashed="yes" rot="MR0">
+<element name="C1" library="rcl" package="E3,5-8" value="220u" x="-39.624" y="20.574" smashed="yes" rot="MR0">
 <attribute name="NAME" x="-39.37" y="22.352" size="1.27" layer="26" ratio="10" rot="MR0"/>
 <attribute name="VALUE" x="-37.338" y="17.526" size="1.27" layer="28" ratio="10" rot="MR0"/>
 </element>
@@ -3047,31 +3047,31 @@ Please make sure your boards conform to these design rules.
 <attribute name="NAME" x="-43.816" y="-32.659" size="1.778" layer="26" ratio="10" rot="MR180"/>
 <attribute name="VALUE" x="-45.029" y="-38.168" size="1.778" layer="28" ratio="10" rot="MR180"/>
 </element>
-<element name="C3" library="rcl" package="E3,5-8" value="" x="-27.432" y="-11.938" smashed="yes" rot="MR0">
+<element name="C3" library="rcl" package="E3,5-8" value="220u" x="-27.432" y="-11.938" smashed="yes" rot="MR0">
 <attribute name="NAME" x="-26.924" y="-9.906" size="1.27" layer="26" ratio="10" rot="MR0"/>
 <attribute name="VALUE" x="-25.146" y="-14.986" size="1.27" layer="28" ratio="10" rot="MR0"/>
 </element>
-<element name="C6" library="rcl" package="E3,5-8" value="" x="-18.796" y="-11.938" smashed="yes" rot="MR180">
+<element name="C6" library="rcl" package="E3,5-8" value="220u" x="-18.796" y="-11.938" smashed="yes" rot="MR180">
 <attribute name="NAME" x="-19.812" y="-13.716" size="1.27" layer="26" ratio="10" rot="MR180"/>
 <attribute name="VALUE" x="-21.082" y="-8.89" size="1.27" layer="28" ratio="10" rot="MR180"/>
 </element>
-<element name="C7" library="rcl" package="E3,5-8" value="" x="-39.37" y="11.684" smashed="yes" rot="MR0">
+<element name="C7" library="rcl" package="E3,5-8" value="220u" x="-39.37" y="11.684" smashed="yes" rot="MR0">
 <attribute name="NAME" x="-38.862" y="13.716" size="1.27" layer="26" ratio="10" rot="MR0"/>
 <attribute name="VALUE" x="-37.084" y="8.636" size="1.27" layer="28" ratio="10" rot="MR0"/>
 </element>
-<element name="C4" library="rcl" package="E3,5-8" value="" x="-24.892" y="39.624" smashed="yes" rot="MR90">
+<element name="C4" library="rcl" package="E3,5-8" value="220u" x="-24.892" y="39.624" smashed="yes" rot="MR90">
 <attribute name="NAME" x="-27.94" y="38.862" size="1.27" layer="26" ratio="10" rot="MR90"/>
-<attribute name="VALUE" x="-27.94" y="37.338" size="1.27" layer="28" ratio="10" rot="MR90"/>
+<attribute name="VALUE" x="-22.86" y="37.592" size="1.27" layer="28" ratio="10" rot="MR90"/>
 </element>
-<element name="C9" library="rcl" package="E3,5-8" value="" x="33.02" y="-15.24" smashed="yes" rot="MR0">
+<element name="C9" library="rcl" package="E3,5-8" value="220u" x="33.02" y="-15.24" smashed="yes" rot="MR0">
 <attribute name="NAME" x="34.036" y="-13.462" size="1.27" layer="26" ratio="10" rot="MR0"/>
 <attribute name="VALUE" x="35.306" y="-18.288" size="1.27" layer="28" ratio="10" rot="MR0"/>
 </element>
-<element name="C10" library="rcl" package="E3,5-8" value="" x="36.068" y="17.526" smashed="yes" rot="MR180">
+<element name="C10" library="rcl" package="E3,5-8" value="220u" x="36.068" y="17.526" smashed="yes" rot="MR180">
 <attribute name="NAME" x="34.798" y="15.748" size="1.27" layer="26" ratio="10" rot="MR180"/>
 <attribute name="VALUE" x="33.782" y="20.574" size="1.27" layer="28" ratio="10" rot="MR180"/>
 </element>
-<element name="C11" library="rcl" package="E3,5-8" value="" x="-35.306" y="-19.558" smashed="yes" rot="MR0">
+<element name="C11" library="rcl" package="E3,5-8" value="220u" x="-35.306" y="-19.558" smashed="yes" rot="MR0">
 <attribute name="NAME" x="-34.036" y="-18.034" size="1.27" layer="26" ratio="10" rot="MR0"/>
 <attribute name="VALUE" x="-33.02" y="-22.606" size="1.27" layer="28" ratio="10" rot="MR0"/>
 </element>
@@ -3080,14 +3080,14 @@ Please make sure your boards conform to these design rules.
 <attribute name="VALUE" x="-6.731" y="40.259" size="1.27" layer="28" ratio="10" rot="MR180"/>
 </element>
 <element name="LEDS1" library="diypov" package="LEDCON" value="LEDCON" x="0" y="0" smashed="yes" rot="R90">
-<attribute name="NAME" x="3.683" y="24.13" size="1.778" layer="25" ratio="10" rot="R270" align="bottom-center"/>
+<attribute name="NAME" x="7.493" y="24.384" size="1.778" layer="25" ratio="10" rot="R270" align="bottom-center"/>
 </element>
 <element name="IC2" library="74xx-eu" package="DIL14" value="74HCT04N" x="22.352" y="0.508" smashed="yes" rot="MR90">
 <attribute name="NAME" x="21.082" y="5.969" size="1.27" layer="26" ratio="10" rot="MR180"/>
 <attribute name="VALUE" x="21.717" y="-6.223" size="1.27" layer="28" ratio="10" rot="MR90"/>
 </element>
 <element name="LEDS2" library="diypov" package="LEDCON" value="LEDCON" x="0" y="0" smashed="yes" rot="R270">
-<attribute name="NAME" x="5.715" y="-36.576" size="1.778" layer="25" ratio="10" rot="R90" align="bottom-center"/>
+<attribute name="NAME" x="-7.747" y="-35.56" size="1.778" layer="25" ratio="10" rot="R90" align="bottom-center"/>
 </element>
 <element name="IC3" library="74xx-eu" package="DIL14" value="74HCT04N" x="38.862" y="0" smashed="yes" rot="MR270">
 <attribute name="NAME" x="40.386" y="5.207" size="1.27" layer="26" ratio="10" rot="MR0"/>
@@ -3103,21 +3103,21 @@ Please make sure your boards conform to these design rules.
 <element name="LEDS4" library="diypov" package="LEDCON" value="LEDCON" x="0" y="0" smashed="yes" rot="R180">
 <attribute name="NAME" x="-39.116" y="7.239" size="1.778" layer="25" ratio="10" align="bottom-center"/>
 </element>
-<element name="C2" library="rcl" package="C025_050-025X075" value="" x="-15.24" y="37.846" smashed="yes" rot="MR0">
+<element name="C2" library="rcl" package="C025_050-025X075" value="100n" x="-15.24" y="37.846" smashed="yes" rot="MR0">
 <attribute name="NAME" x="-10.033" y="36.957" size="1.27" layer="26" ratio="10" rot="MR0"/>
 <attribute name="VALUE" x="-13.081" y="35.052" size="1.27" layer="28" ratio="10" rot="MR0"/>
 </element>
-<element name="C5" library="rcl" package="C025_050-025X075" value="" x="24.13" y="-11.43" smashed="yes" rot="MR0">
+<element name="C5" library="rcl" package="C025_050-025X075" value="100n" x="24.13" y="-11.43" smashed="yes" rot="MR0">
 <attribute name="NAME" x="18.669" y="-12.065" size="1.27" layer="26" ratio="10" rot="MR0"/>
 <attribute name="VALUE" x="26.289" y="-14.224" size="1.27" layer="28" ratio="10" rot="MR0"/>
 </element>
-<element name="C8" library="rcl" package="C025_050-025X075" value="" x="34.798" y="11.176" smashed="yes" rot="MR180">
-<attribute name="NAME" x="29.845" y="12.065" size="1.27" layer="26" ratio="10" rot="MR180"/>
-<attribute name="VALUE" x="32.639" y="13.97" size="1.27" layer="28" ratio="10" rot="MR180"/>
+<element name="C8" library="rcl" package="C025_050-025X075" value="100n" x="34.798" y="11.176" smashed="yes" rot="MR180">
+<attribute name="NAME" x="29.845" y="10.287" size="1.27" layer="26" ratio="10" rot="MR180"/>
+<attribute name="VALUE" x="28.575" y="12.192" size="1.27" layer="28" ratio="10" rot="MR180"/>
 </element>
-<element name="C12" library="rcl" package="C025_050-025X075" value="" x="-35.306" y="-12.954" smashed="yes" rot="MR0">
+<element name="C12" library="rcl" package="C025_050-025X075" value="100n" x="-35.306" y="-12.954" smashed="yes" rot="MR0">
 <attribute name="NAME" x="-41.021" y="-13.589" size="1.27" layer="26" ratio="10" rot="MR0"/>
-<attribute name="VALUE" x="-33.147" y="-15.748" size="1.27" layer="28" ratio="10" rot="MR0"/>
+<attribute name="VALUE" x="-40.513" y="-15.494" size="1.27" layer="28" ratio="10" rot="MR0"/>
 </element>
 <element name="POWER" library="diypov" package="XT30" value="TX30" x="-22.352" y="-4.826" smashed="yes" rot="MR180">
 <attribute name="NAME" x="-16.51" y="-2.032" size="1.778" layer="26" ratio="10" rot="MR180"/>
@@ -3143,7 +3143,7 @@ Please make sure your boards conform to these design rules.
 <attribute name="VALUE" x="45.029" y="-34.984" size="1.778" layer="28" ratio="10" rot="MR0"/>
 </element>
 <element name="U$2" library="im-pro-logo" package="LOGO_20MM" value="LOGO20MM" x="42.672" y="-41.91" rot="R90"/>
-<element name="U$3" library="im-pro-logo" package="LOGO_20MM" value="LOGO20MM" x="-36.322" y="27.432" rot="R90"/>
+<element name="U$3" library="im-pro-logo" package="LOGO_20MM" value="LOGO20MM" x="-42.418" y="45.466" rot="R270"/>
 <element name="U$4" library="im-pro-logo" package="LOGO_20MM" value="LOGO20MM" x="47.244" y="40.894" rot="R180"/>
 </elements>
 <signals>

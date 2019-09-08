@@ -58,8 +58,8 @@
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -2805,16 +2805,16 @@ Please make sure your boards conform to these design rules.
 <element name="TASTER" library="main" package="XT30" value="TX30" x="3.175" y="51.435" smashed="yes" rot="R90">
 <attribute name="NAME" x="8.509" y="46.355" size="1.778" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="C2" library="rcl" package="E3,5-8" value="100u" x="4.445" y="13.335" smashed="yes" rot="R270">
+<element name="C2" library="rcl" package="E3,5-8" value="220u" x="4.445" y="13.335" smashed="yes" rot="R270">
 <attribute name="NAME" x="3.937" y="18.669" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="1.397" y="15.621" size="1.27" layer="27" ratio="10" rot="R270"/>
 </element>
 <element name="CN1" library="microbuilder" package="DCJACK_2MM_PTH" value="" x="47.625" y="13.335" smashed="yes" rot="R90">
-<attribute name="NAME" x="43.815" y="19.685" size="1.27" layer="25" ratio="18" rot="R180"/>
+<attribute name="NAME" x="43.815" y="17.145" size="1.27" layer="25" ratio="18" rot="R180"/>
 <attribute name="VALUE" x="47.625" y="18.669" size="0.4064" layer="27" ratio="10" rot="R180"/>
 </element>
 <element name="LEDS" library="main" package="XT30" value="TX30" x="3.175" y="38.735" smashed="yes" rot="R90">
-<attribute name="NAME" x="8.509" y="33.655" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="NAME" x="8.509" y="34.925" size="1.778" layer="25" ratio="10" rot="R90"/>
 </element>
 <element name="MOTOR" library="main" package="XT30" value="TX30" x="3.175" y="26.035" smashed="yes" rot="R90">
 <attribute name="NAME" x="8.509" y="20.955" size="1.778" layer="25" ratio="10" rot="R90"/>
@@ -2830,7 +2830,7 @@ Please make sure your boards conform to these design rules.
 <attribute name="VALUE" x="33.655" y="37.1856" size="1.27" layer="27" ratio="10" rot="R270"/>
 </element>
 <element name="U$1" library="im-pro-logo" package="LOGO_20MM" value="LOGO20MM" x="43.815" y="49.53" rot="R90"/>
-<element name="U$2" library="diypov" package="DCDC" value="DCDC_5V" x="30.48" y="1.27" rot="R180"/>
+<element name="DCDC" library="diypov" package="DCDC" value="DCDC_5V" x="30.48" y="1.27" rot="R180"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -2848,18 +2848,18 @@ Please make sure your boards conform to these design rules.
 <vertex x="44.45" y="78.105"/>
 <vertex x="0" y="78.105"/>
 </polygon>
-<contactref element="U$2" pad="GND5"/>
-<contactref element="U$2" pad="GND2"/>
-<contactref element="U$2" pad="GND1"/>
-<contactref element="U$2" pad="GND3"/>
-<contactref element="U$2" pad="GND6"/>
-<contactref element="U$2" pad="GND4"/>
-<contactref element="U$2" pad="GND5"/>
-<contactref element="U$2" pad="GND2"/>
-<contactref element="U$2" pad="GND1"/>
-<contactref element="U$2" pad="GND3"/>
-<contactref element="U$2" pad="GND6"/>
-<contactref element="U$2" pad="GND4"/>
+<contactref element="DCDC" pad="GND5"/>
+<contactref element="DCDC" pad="GND2"/>
+<contactref element="DCDC" pad="GND1"/>
+<contactref element="DCDC" pad="GND3"/>
+<contactref element="DCDC" pad="GND6"/>
+<contactref element="DCDC" pad="GND4"/>
+<contactref element="DCDC" pad="GND5"/>
+<contactref element="DCDC" pad="GND2"/>
+<contactref element="DCDC" pad="GND1"/>
+<contactref element="DCDC" pad="GND3"/>
+<contactref element="DCDC" pad="GND6"/>
+<contactref element="DCDC" pad="GND4"/>
 </signal>
 <signal name="+12V">
 <contactref element="CN1" pad="PWR"/>
@@ -2873,9 +2873,9 @@ Please make sure your boards conform to these design rules.
 <wire x1="3.175" y1="36.195" x2="11.43" y2="27.94" width="1.6764" layer="1"/>
 <wire x1="11.43" y1="27.94" x2="11.43" y2="23.495" width="1.6764" layer="1"/>
 <wire x1="11.43" y1="23.495" x2="12.065" y2="23.495" width="1.6764" layer="1"/>
-<contactref element="U$2" pad="VIN3"/>
-<contactref element="U$2" pad="VIN1"/>
-<contactref element="U$2" pad="VIN2"/>
+<contactref element="DCDC" pad="VIN3"/>
+<contactref element="DCDC" pad="VIN1"/>
+<contactref element="DCDC" pad="VIN2"/>
 <wire x1="18.65" y1="16.91" x2="23.89" y2="16.91" width="1.6764" layer="16"/>
 <wire x1="23.89" y1="16.91" x2="26.27" y2="14.53" width="1.6764" layer="16"/>
 <wire x1="29.845" y1="15.045" x2="26.785" y2="15.045" width="1.6764" layer="16"/>
@@ -2923,9 +2923,9 @@ Please make sure your boards conform to these design rules.
 <wire x1="4.513" y1="15.045" x2="4.445" y2="15.113" width="0.8128" layer="16"/>
 <wire x1="43.18" y1="17.78" x2="41.91" y2="17.78" width="0.8128" layer="16"/>
 <wire x1="41.91" y1="17.78" x2="35.56" y2="24.13" width="0.8128" layer="16"/>
-<contactref element="U$2" pad="VOUT2"/>
-<contactref element="U$2" pad="VOUT1"/>
-<contactref element="U$2" pad="VOUT3"/>
+<contactref element="DCDC" pad="VOUT2"/>
+<contactref element="DCDC" pad="VOUT1"/>
+<contactref element="DCDC" pad="VOUT3"/>
 <wire x1="13.57" y1="8.89" x2="13.57" y2="14.53" width="0.8128" layer="16"/>
 <wire x1="13.57" y1="14.53" x2="10.175" y2="14.53" width="0.8128" layer="16"/>
 <wire x1="10.175" y1="14.53" x2="10.175" y2="15.045" width="0.8128" layer="16"/>
