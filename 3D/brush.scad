@@ -1,62 +1,120 @@
 include <config.scad>
 
-motor_maxd=45;
+use <holder.scad>
 
-module brush1()
-difference(){
-    union(){
-        cylinder(h=10,d=motor_maxd+6);
+brush_holder_d=51;
+
+module debug(){
+    translate([0,brush_holder_d,0])
+    rotate([180,0,0])
+    translate([0,0,-40-2])
+        holder();
         
-        translate([-20/2,-(motor_maxd+20)/2,0])
-            cube([20,motor_maxd+20,10]);
-        
-        translate([-(motor_maxd+20)/2,-20/2,0])
-            cube([10,20,20]);
 
+    for(i=[0,brush_holder_d])
+    translate([0,i,-1])
+    difference(){
+        cube([50,50,2],true);
+        for(i=[-1,1])
+        translate([0,i*29/2,-2])
+            cylinder(h=4,d=4.4);
     }
-
-    translate([0,0,-1])
-        cylinder(h=10+2,d=motor_maxd);
-
-    translate([-10/2,-(motor_maxd+20)/2-1,-1])
-        cube([10,motor_maxd+20+2,10+2]);
-    for(d=[1,-1])
-    translate([-(20+2)/2,d*(motor_maxd+20-8)/2,+10/2])
-    rotate([0,90,0])
-        cylinder(h=20+2,d=3+play);
-
-    for(d=[1,-1])
-    translate([-motor_maxd/2-10/2,d*10/2,-1])
-        cylinder(h=20+2,d=3+play);
-
-    translate([-(motor_maxd+10+3+play)/2,10/2-10,-1])
-        cube([3+play,10,20+2]);
-}
-
-
-module brush2()
-difference(){
-    h=7;
-    union(){
-        translate([-(motor_maxd+20)/2,-10/2,20])
-            cube([20,10,h]);
-    }
-    for(d=[1,-1])
-    translate([-motor_maxd/2+d*10/2,0,20-1])
-        cylinder(h=h+2,d=3+play);
-
-    translate([-(motor_maxd+10)/2,-(3+play)/2,20-1])
-        cube([10,3+play,h+2]);
-    
-    translate([-(motor_maxd+20)/2+20-5,0,20+h/2])
-    rotate([0,90,0])
-    {
-        cylinder(h=10,d=3+play);        
-        cylinder(h=M3_nut_h,r=M3_nut_d/2,$fn=6);        
-        translate([-10,-M3_nut_w/2,0])
-            cube([10,M3_nut_w,M3_nut_h]);        
+    //PCB
+    translate([0,brush_holder_d,40+2])
+    rotate(0){        
+        translate([-50,-50,0])        
+            cube([100,100,1.6]);
+        translate([-5/2,-2/2-46,-27])        
+            cube([5,2,27]);
     }
 }
 
-brush1();
+module brush(){
+    brush1();
+    translate([0,brush_holder_d-15-26/2-2,14])
+    rotate([-90,90,0])
+        brush2();
+}
+
+module brush1(){
+    difference(){
+        union(){
+            translate([-35/2,brush_holder_d-15-26/2-2-5,0])
+                cube([35,5,21.5]);
+            translate([0,brush_holder_d-15-26/2-2,0])
+            intersection(){                
+                translate([-12/2,-15,0])
+                    cube([12,15,21.5]);
+                translate([0,0,0])
+                    cylinder(h=21.5,d=29);
+            }
+            translate([-35/2,5,0])
+                cube([35,15,5]);
+            translate([-15/2,-35/2,0])
+                cube([15,35,5]);
+        }
+        
+        for(i=[-1,1])
+        translate([0,i*29/2,0]){
+            translate([0,0,5-2])
+                cylinder(h=M3_nut_h,r=M3_nut_d/2,$fn=6);        
+            translate([0,0,-1])
+                cylinder(h=10+2,d=3.2+play);
+        }        
+        translate([-M3_nut_d/2,29/2,3])
+            cube([M3_nut_d,10,M3_nut_h]);       
+        translate([0,brush_holder_d-15-26/2-2,14]){
+            translate([0,-1,0])
+            difference(){
+                union(){                
+                    for(i=[-1,1]) 
+                    translate([0,0,i*(5+2)/2])
+                    rotate([-90,0,0])
+                        cylinder(h=2,d=10);
+                    for(i=[0,180]) 
+                    rotate([i,0,0])
+                    translate([0,0,3])
+                        cylinder(h=6,d=3);
+                }
+                translate([-10/2,-1,-1/2])
+                    cube([10,4,1]);
+            }
+            for(i=[-1,1]) 
+            translate([i*25/2,-8,0])
+                rotate([-90,0,0])
+                {
+                    cylinder(h=10,d=3.2+play);
+                    translate([0,0,2])
+                        cylinder(h=M3_nut_h,r=M3_nut_d/2,$fn=6);        
+                }
+        }
+        translate([0,6,21.5-10/2-1])
+        rotate([-90,0,0])
+            cylinder(h=3,d=10+2*play);        
+    }
+}
+
+module brush2(){
+    difference(){
+        union(){
+            translate([-15/2,-15/2,0])
+                cube([14.4,15,15]);
+            translate([-15/2,-35/2,0])
+                cube([15,35,3]);
+        }
+        for(i=[-1,1])
+        translate([i*(5+2)/2,0,+15/2])
+            cube([4.8+2*play,6.3+2*play,15+2],center=true);
+        
+        for(i=[-1,1])
+        translate([0,i*25/2,-1])
+            cylinder(h=20+2,d=3.2+play);        
+    }
+}
+
+
+//debug();
+
+//brush();
+//brush1();
 brush2();

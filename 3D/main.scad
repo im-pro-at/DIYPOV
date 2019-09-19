@@ -1,13 +1,11 @@
 include <config.scad>
 
-use <pcb.scad>
 use <holder.scad>
 use <brush.scad>
 use <corner.scad>
-use <motor.scad>
 
 show_all = true;
-explode = true;
+explode = false;
 
 // input : list of numbers
 // output : sorted list of numbers
@@ -59,13 +57,13 @@ union(){
     }
 
     //Motor
-    translate([0,0,10])
+    translate([0,0,20])
     {
         cylinder(h=16,d=5);
         translate([0,0,16])
             cylinder(h=4,d=18);
         translate([0,0,16+4])
-            cylinder(h=67,d=42);
+            cylinder(h=80,d=45);
     }
 
 
@@ -78,7 +76,7 @@ union(){
     wood_w=500;
     wood_h=160;
     wood_d=10;
-    translate([0,0,-30]){
+    *translate([0,0,-30]){
         color(wood)
         {
             translate([-wood_d-30,-wood_w/2,wood_h-100])
@@ -96,14 +94,14 @@ union(){
         if(show_all)
         for(r=[0,90,180,270])
         rotate([0,0,r])
-        translate([-wood_w/2,-wood_w/2])
+        translate([-wood_w/2,-wood_w/2,2])
         rotate([90,0,90])
             corner();
                 
         if(show_all)
         %color("LightCyan",0.2){
-            translate([-wood_w/2-wood_d,-wood_w/2-wood_d-3])
-                dcube("glas",[wood_w+wood_d*2,wood_w+wood_d*2,3]);    
+            translate([-wood_w/2,-wood_w/2,0])
+                dcube("glas",[wood_w,wood_w,2]);    
         }
     }
 }

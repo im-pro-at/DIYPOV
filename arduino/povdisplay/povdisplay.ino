@@ -3,90 +3,28 @@
 // (c) 2019      Patrick Knöbel
 // ----------------------------------------------------------------------------
 
+#include <ArduinoWebsockets.h>
 #include <WiFi.h>
-#include <ESPAsyncWebServer.h>
-#include <WebSocketsServer.h>
-
+#include <WebServer.h>
+#include <img_converters.h>
 #include "index.html.h"
-#include "favicon.ico.h"
 
+using namespace websockets;
  
 // Globals
-AsyncWebServer server(80);
-WebSocketsServer webSocket = WebSocketsServer(1337);
-char msg_buf[10];
-int led_state = 0;
+WebServer server(80);
+
+WebsocketsServer wsserver;
  
 /***********************************************************
  * Functions
  */
- 
-// Callback: receiving any WebSocket message
-void onWebSocketEvent(uint8_t client_num,
-                      WStype_t type,
-                      uint8_t * payload,
-                      size_t length) {
- 
-  // Figure out the type of WebSocket event
-  switch(type) {
- 
-    // Client has disconnected
-    case WStype_DISCONNECTED:
-      Serial.printf("[%u] Disconnected!\n", client_num);
-      break;
- 
-    // New client has connected
-    case WStype_CONNECTED:
-      {
-        IPAddress ip = webSocket.remoteIP(client_num);
-        Serial.printf("[%u] Connection from ", client_num);
-        Serial.println(ip.toString());
-      }
-      break;
- 
-    // Handle text messages from client
-    case WStype_TEXT:
- 
-      // Print out raw message
-      Serial.printf("[%u] Received text: %s\n", client_num, payload);
- 
-      // Toggle LED
-      if ( strcmp((char *)payload, "toggleLED") == 0 ) {
-//        led_state = led_state ? 0 : 1;
-        Serial.printf("Toggling LED to %u\n", 1);
-        //digitalWrite(led_pin, led_state);
- 
-      // Report the state of the LED
-      } else if ( strcmp((char *)payload, "getLEDState") == 0 ) {
-        sprintf(msg_buf, "%d", 1);
-        Serial.printf("Sending to [%u]: %s\n", client_num, msg_buf);
-        webSocket.sendTXT(client_num, msg_buf);
- 
-      // Message not recognized
-      } else {
-        Serial.println("[%u] Message not recognized");
-      }
-      break;
- 
-    // For everything else: do nothing
-    case WStype_BIN:
-      Serial.printf("[%u] get binary length: %u\n", num, length);
-    case WStype_ERROR:
-    case WStype_FRAGMENT_TEXT_START:
-    case WStype_FRAGMENT_BIN_START:
-    case WStype_FRAGMENT:
-    case WStype_FRAGMENT_FIN:
-    default:
-        Serial.printf("WUPS ...\n");
-      break;
-  }
-}
- 
+  
  
 /***********************************************************
  * Main
  */
- 
+uint8_t rgbbufer[(131*131+1)*3];
 void setup() {
  
   // Start Serial port
@@ -102,29 +40,87 @@ void setup() {
   Serial.println(WiFi.softAPIP());
  
   // On HTTP request for root, provide index.html file
-  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
-    request->send(200, "text/html", INDEX_HTML);
-  });
-  server.on("/favicon.ico", HTTP_GET, [](AsyncWebServerRequest *request) {
-    AsyncWebServerResponse *response = request->beginResponse_P(200, "image/x-icon", FAVICON_ICON, FAVICON_ICON_LEN);
-    request->send(response);
-  });
+  server.on("/", HTTP_GET, []() {
+    server.send_P(200, "text/html", INDEX_HTML);
+  });  
+
   // Handle requests for pages that do not exist
-  server.onNotFound( [](AsyncWebServerRequest *request) {
-    request->send(404, "text/plain", "Not found");
+  server.onNotFound( []() {
+    server.send(200, "text/html", INDEX_HTML);
   });
  
   // Start web server
   server.begin();
- 
-  // Start WebSocket server and assign callback
-  webSocket.begin();
-  webSocket.onEvent(onWebSocketEvent);
   
+  //i2s:
+  i2s_config_t i2s_config = {
+    .mode = (i2s_mode_t)(I2S_MODE_MASTER | I2S_MODE_TX),
+    .sample_rate =  2000000,              
+    .bits_per_sample = I2S_BITS_PER_SAMPLE_16BIT, 
+    .channel_format = I2S_CHANNEL_FMT_ONLY_RIGHT,
+    .communication_format = I2S_COMM_FORMAT_I2S,
+    .intr_alloc_flags = ESP_INTR_FLAG_LEVEL1,
+    .dma_buf_count = 8,
+    .dma_buf_len = 64,
+    .use_apll = false,
+    .tx_desc_auto_clear = false,
+    .fixed_mclk = 0
+  };
+  static const i2s_pin_config_t pin_config = {
+    .bck_io_num = 26,
+    .ws_io_num = 25,
+    .data_out_num = 22,
+    .data_in_num = I2S_PIN_NO_CHANGE
+  };   
+  i2s_driver_install(I2S_NUM_0, &i2s_config, 0, NULL);
+  i2s_set_pin(I2S_NUM_0, &pin_config);
+   
 }
- 
-void loop() {
+
+WebsocketsClient client;
+unsigned long laststatus;
+void loop() {  
+  server.handleClient();
+
+  if(client.available()) {
+    client.poll();    
+  }
+  else if(wsserver.available()){
+    if(wsserver.poll()){
+      Serial.println("New Connection");
+      client.close();
+      client = wsserver.accept();
+      client.onMessage([](WebsocketsClient& client, WebsocketsMessage msg) {
+        Serial.printf("Message T%d B%d Pi%d Po%d C%d stream%d length: %u\n", msg.isText(), msg.isBinary(), msg.isPing(), msg.isPong(), msg.isClose(),msg.isPartial(), msg.data().length());
+        if(laststatus<millis()){
+          client.send("STATUS:25.2");
+          laststatus= millis()+1000;
+        }
+        else{
+          client.send("OK");          
+        }
+        if(msg.isText()){
+          //settings
+          Serial.printf("Steeings: %s\n",msg.data().c_str());
+        }
+        if(msg.isBinary()){
+          //Image
+          //decode:
+          unsigned long start = micros();
+          fmt2rgb888((uint8_t*)msg.data().c_str(),msg.data().length(),PIXFORMAT_JPEG,rgbbufer);
+          unsigned long ende = micros();
+          Serial.printf("Convert took %lu us \n",ende-start);
+          
+          Serial.println(ESP.getFreeHeap());
+        }
+        
+      });
+      
+    }
+  }
+  else {
+    Serial.println("Start Server");
+    wsserver.listen(8080);
+  }
   
-  // Look for and handle WebSocket data
-  webSocket.loop();
 }
