@@ -44,20 +44,21 @@ module metalcorner(){
 union(){
     rotate([0,0,360*$t]){
     //PCB
-        translate([-66/2,-71.2/2,-1.6]) 
-           ;//new_board1();
-        if(show_all)
+        color("Black")
+        translate([-100/2,-100/2,-1.6]) 
+            cube([100,100,1.6]);
         for(i=[[0,66/2],[90,71.1/2],[180,66/2],[270,71.1/2]])
+        color("Black")
         rotate([0,0,i[0]])
-        translate([i[1]+0.1,-22.86/2,-1.6]) 
-            ;//new_board2();
+        translate([-12/2,10,-3-5]) 
+            cube([12,230,3]);
 
         holder();
 
     }
 
     //Motor
-    translate([0,0,20])
+    translate([0,0,27])
     {
         cylinder(h=16,d=5);
         translate([0,0,16])
@@ -65,21 +66,36 @@ union(){
         translate([0,0,16+4])
             cylinder(h=80,d=45);
     }
-
-
-    translate([0,0,85]){
-        //brush1();
-        //brush2();
+    //brush holder
+    translate([0,-51,44]){
+        rotate([180,0,180])
+        brush();
     }
-
+    //brackets
+    color("Black")
+    for(i=[0,-51])
+    translate([0,i,44]){
+        translate([-36,-50/2,0])
+            cube([52,50,3]);
+        translate([-36,-50/2,0])
+            cube([3,50,60]);
+    }
+    
+    //PCB Motor
+    color("Green")
+    translate([12,-225+70,80]){
+        translate([-36,-50/2,0])
+            cube([1.6,78,44]);
+    }
+    
 
     wood_w=500;
     wood_h=160;
     wood_d=10;
-    *translate([0,0,-30]){
+    translate([0,0,-30]){
         color(wood)
         {
-            translate([-wood_d-30,-wood_w/2,wood_h-100])
+            translate([-wood_d-36,-wood_w/2,wood_h-100])
                dcube("wood",[wood_d,wood_w,100]);
             if(show_all)
             translate([-wood_w/2,-wood_w/2,wood_h+(explode?100:0)])
