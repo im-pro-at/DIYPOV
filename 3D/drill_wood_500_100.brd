@@ -156,20 +156,20 @@
 <hole x="141" y="53" drill="3"/>
 <hole x="120" y="90" drill="3"/>
 <hole x="105.5" y="61.5" drill="3"/>
-<hole x="187.5" y="80" drill="4"/>
-<hole x="210.5" y="80" drill="4"/>
-<hole x="187.5" y="52" drill="4"/>
-<hole x="210.5" y="52" drill="4"/>
-<hole x="238.5" y="80" drill="4"/>
-<hole x="261.5" y="80" drill="4"/>
-<hole x="238.5" y="52" drill="4"/>
-<hole x="261.5" y="52" drill="4"/>
+<hole x="187.5" y="48" drill="4"/>
+<hole x="210.5" y="48" drill="4"/>
+<hole x="187.5" y="20" drill="4"/>
+<hole x="210.5" y="20" drill="4"/>
+<hole x="238.5" y="48" drill="4"/>
+<hole x="261.5" y="48" drill="4"/>
+<hole x="238.5" y="20" drill="4"/>
+<hole x="261.5" y="20" drill="4"/>
 <dimension x1="104.439340625" y1="60.439340625" x2="106.560659375" y2="62.560659375" x3="100" y3="66.999996875" textsize="2.54" layer="47" dtype="diameter"/>
 <dimension x1="121.5" y1="90" x2="118.5" y2="90" x3="120" y3="85" textsize="2.54" layer="47" dtype="diameter"/>
-<dimension x1="189.5" y1="80" x2="185.5" y2="80" x3="187.5" y3="40" textsize="2.54" layer="47" dtype="diameter"/>
-<dimension x1="212.5" y1="80" x2="208.5" y2="80" x3="210.5" y3="40" textsize="2.54" layer="47" dtype="diameter"/>
-<dimension x1="263.5" y1="80" x2="259.5" y2="80" x3="261.5" y3="40" textsize="2.54" layer="47" dtype="diameter"/>
-<dimension x1="240.5" y1="80" x2="236.5" y2="80" x3="238.5" y3="40" textsize="2.54" layer="47" dtype="diameter"/>
+<dimension x1="189.5" y1="48" x2="185.5" y2="48" x3="187.5" y3="8" textsize="2.54" layer="47" dtype="diameter"/>
+<dimension x1="212.5" y1="48" x2="208.5" y2="48" x3="210.5" y3="8" textsize="2.54" layer="47" dtype="diameter"/>
+<dimension x1="263.5" y1="48" x2="259.5" y2="48" x3="261.5" y3="8" textsize="2.54" layer="47" dtype="diameter"/>
+<dimension x1="240.5" y1="48" x2="236.5" y2="48" x3="238.5" y3="8" textsize="2.54" layer="47" dtype="diameter"/>
 <dimension x1="71.5" y1="90" x2="68.5" y2="90" x3="70" y3="35" textsize="2.54" layer="47" dtype="diameter"/>
 <dimension x1="142.5" y1="90" x2="139.5" y2="90" x3="141" y3="35" textsize="2.54" layer="47" dtype="diameter"/>
 <dimension x1="70" y1="53" x2="0" y2="100" x3="35" y3="103.5" textsize="2.54" layer="47" dtype="horizontal"/>
@@ -179,12 +179,12 @@
 <dimension x1="141" y1="90" x2="59.5" y2="100" x3="59.5" y3="95" textsize="2.54" layer="47" dtype="vertical"/>
 <dimension x1="105.5" y1="61.5" x2="59.5" y2="90" x3="66" y3="75.75" textsize="2.54" layer="47" dtype="vertical"/>
 <dimension x1="141" y1="53" x2="58" y2="90" x3="59.5" y3="71.5" textsize="2.54" layer="47" dtype="vertical"/>
-<dimension x1="187.5" y1="52" x2="0" y2="100" x3="93.75" y3="107.5" textsize="2.54" layer="47" dtype="horizontal"/>
-<dimension x1="238.5" y1="80" x2="187.5" y2="107.5" x3="213" y3="107.5" textsize="2.54" layer="47" dtype="horizontal"/>
-<dimension x1="210.5" y1="52" x2="187.5" y2="52" x3="199" y3="90" textsize="2.54" layer="47" dtype="horizontal"/>
-<dimension x1="261.5" y1="52" x2="238.5" y2="52" x3="250" y3="90" textsize="2.54" layer="47" dtype="horizontal"/>
-<dimension x1="261.5" y1="80" x2="167.5" y2="100" x3="167.5" y3="90" textsize="2.54" layer="47" dtype="vertical"/>
-<dimension x1="261.5" y1="52" x2="167.5" y2="80" x3="167.5" y3="66" textsize="2.54" layer="47" dtype="vertical"/>
+<dimension x1="187.5" y1="20" x2="0" y2="100" x3="93.75" y3="107.5" textsize="2.54" layer="47" dtype="horizontal"/>
+<dimension x1="238.5" y1="48" x2="187.5" y2="107.5" x3="213" y3="107.5" textsize="2.54" layer="47" dtype="horizontal"/>
+<dimension x1="210.5" y1="20" x2="187.5" y2="20" x3="199" y3="58" textsize="2.54" layer="47" dtype="horizontal"/>
+<dimension x1="261.5" y1="20" x2="238.5" y2="20" x3="250" y3="58" textsize="2.54" layer="47" dtype="horizontal"/>
+<dimension x1="261.5" y1="20" x2="168.5" y2="0" x3="167.5" y3="10" textsize="2.54" layer="47" dtype="vertical"/>
+<dimension x1="261.5" y1="20" x2="261.5" y2="48" x3="167.5" y3="34" textsize="2.54" layer="47" dtype="vertical"/>
 </plain>
 <libraries>
 </libraries>

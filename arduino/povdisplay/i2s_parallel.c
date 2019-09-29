@@ -152,7 +152,7 @@ void i2s_parallel_setup(i2s_dev_t *dev, const i2s_parallel_config_t *cfg) {
     //Enable LCD mode
     dev->conf2.val = 0;
     dev->conf2.lcd_en = 1;
-    dev->conf2.lcd_tx_wrx2_en = 1; // HN
+    dev->conf2.lcd_tx_wrx2_en = 0; // HN
     dev->conf2.lcd_tx_sdx2_en = 0; // HN
     
     dev->sample_rate_conf.val = 0;

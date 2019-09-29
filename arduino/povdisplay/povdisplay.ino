@@ -3,28 +3,28 @@
 // (c) 2019      Patrick Knöbel
 // ----------------------------------------------------------------------------
 
-#define SPI_CLK 13
+#define SPI_CLK 21
 #define SPI_DAT 12
 #define WING0 14
 #define WING1 27
 #define LEDGOUP0 26
 #define LEDGOUP1 25
 
-#define I2S_R0 13
-#define I2S_R1 12
-#define I2S_R2 14
-#define I2S_R3 27
-#define I2S_G0 26
-#define I2S_G1 25
-#define I2S_G2 33
-#define I2S_G3 32
-#define I2S_B0 15
-#define I2S_B1 2
-#define I2S_B2 4
-#define I2S_B3 16
-#define I2S_SY 17
-#define I2S_CK 5
-#define I2S_EN 18
+#define I2S_D00 21
+#define I2S_D01 12
+#define I2S_D02 14
+#define I2S_D03 27
+#define I2S_D04 26
+#define I2S_D05 25
+#define I2S_D06 33
+#define I2S_D07 32
+#define I2S_D08 15
+#define I2S_D09 2
+#define I2S_D10 4
+#define I2S_D11 16
+#define I2S_SYC 17
+#define I2S_CLK 5
+#define I2S_EN  18
 
 #define TIGGER 19
 
@@ -49,9 +49,9 @@ WebsocketsServer wsserver;
 WiFiServer motorServer(9999);
 
 double pid_in=0, pid_out=0, pid_set=0;
-AutoPID myPID(&pid_in, &pid_set, &pid_out, 0, 255, 10, 10, 0);
+AutoPID myPID(&pid_in, &pid_set, &pid_out, 0, 255, 10, 5, 0);
 
-#define B_LEN (131*131+1) //word al.
+#define B_LEN (131 * 131 - (19 * 19 * 4) + 3) //word al.
 uint8_t *rgbbufer;
 uint16_t buffer[B_LEN];
 i2s_parallel_buffer_desc_t bufdesc;
@@ -67,20 +67,20 @@ void start_I2S(){
   I2S_started=1;
   bufdesc.memory = buffer;
   bufdesc.size = B_LEN*2; //16 bit
-  cfg.gpio_bus[ 0] = I2S_R0; //D0 = R0
-  cfg.gpio_bus[ 1] = I2S_R1; //D1 = R1
-  cfg.gpio_bus[ 2] = I2S_R2; //D2 = R2
-  cfg.gpio_bus[ 3] = I2S_R3; //D3 = R3
-  cfg.gpio_bus[ 4] = I2S_G0; //D4 = G0
-  cfg.gpio_bus[ 5] = I2S_G1; //D5 = G1
-  cfg.gpio_bus[ 6] = I2S_G2; //D6 = G2
-  cfg.gpio_bus[ 7] = I2S_G3; //D7 = G3
-  cfg.gpio_bus[ 8] = I2S_B0; //D8 = B0
-  cfg.gpio_bus[ 9] = I2S_B1; //D9 = B1
-  cfg.gpio_bus[10] = I2S_B2; //D10= B2
-  cfg.gpio_bus[11] = I2S_B3; //D11= B3
-  cfg.gpio_bus[12] = I2S_SY; //SYNC
-  cfg.gpio_clk = I2S_CK;	// XCK
+  cfg.gpio_bus[ 0] = I2S_D00; //D0 = B0
+  cfg.gpio_bus[ 1] = I2S_D01; //D1 = B1
+  cfg.gpio_bus[ 2] = I2S_D02; //D2 = B2
+  cfg.gpio_bus[ 3] = I2S_D03; //D3 = B3
+  cfg.gpio_bus[ 4] = I2S_D04; //D4 = G0
+  cfg.gpio_bus[ 5] = I2S_D05; //D5 = G1
+  cfg.gpio_bus[ 6] = I2S_D06; //D6 = G2
+  cfg.gpio_bus[ 7] = I2S_D07; //D7 = G3
+  cfg.gpio_bus[ 8] = I2S_D08; //D8 = R0
+  cfg.gpio_bus[ 9] = I2S_D09; //D9 = R1
+  cfg.gpio_bus[10] = I2S_D10; //D10= R2
+  cfg.gpio_bus[11] = I2S_D11; //D11= R3
+  cfg.gpio_bus[12] = I2S_SYC; //SYNC
+  cfg.gpio_clk = I2S_CLK;	// XCK
   cfg.bits = I2S_PARALLEL_BITS_16;
   cfg.clkspeed_hz = 4*1000*1000;//resulting pixel clock = 2MHz
   cfg.buf = &bufdesc;
@@ -91,16 +91,17 @@ void start_I2S(){
 
 void SPI_send(uint8_t c){
 
-  for (int i=8; i>=0 ;i--)
+  for (int i=7; i>=0 ;i--)
   {
     digitalWrite(SPI_DAT, (c&(1<<i))?HIGH:LOW); 
   
-    delayMicroseconds(1);                
     digitalWrite(SPI_CLK, HIGH); 
 
     delayMicroseconds(1);
   
     digitalWrite(SPI_CLK, LOW); 
+    
+    delayMicroseconds(1);                
   }
 }
 
@@ -180,7 +181,7 @@ void setup() {
   Serial.begin(115200);
 
   //init buffers
-  rgbbufer = (uint8_t *) heap_caps_calloc(B_LEN, 3, MALLOC_CAP_8BIT);
+  rgbbufer = (uint8_t *) heap_caps_calloc(131*131+1, 3, MALLOC_CAP_8BIT);
   Serial.printf("rgbbufer %ld\n",rgbbufer);
   Serial.printf("buffer %ld\n",buffer);
   
@@ -230,6 +231,8 @@ unsigned long laststatus=0;
 
 unsigned long motorupdate=0;
 WiFiClient motorClient;
+
+uint8_t colormode=0;
 
 void loop() {  
 
@@ -290,9 +293,9 @@ void loop() {
       client.onMessage([](WebsocketsClient& client, WebsocketsMessage msg) {
         Serial.printf("Message T%d B%d Pi%d Po%d C%d stream%d length: %u\n", msg.isText(), msg.isBinary(), msg.isPing(), msg.isPong(), msg.isClose(),msg.isPartial(), msg.data().length());
         if(laststatus<millis()){
-          char buffer[20];
-          snprintf(buffer, sizeof(buffer) - 1, "STATUS:%.2f",pid_in==100?-1:pid_in);
-          client.send(buffer);
+          char status[20];
+          snprintf(status, sizeof(status) - 1, "STATUS:%.2f",pid_in==100?-1:pid_in);
+          client.send(status);
           laststatus= millis()+1000;
         }
         else{
@@ -303,7 +306,9 @@ void loop() {
           const char * settings =msg.data().c_str();
           settings = strchr(settings,':')+1;
           pid_set = atof(settings);
-          Serial.printf("Steeings: %s => set_d: %f \n",msg.data().c_str(),pid_set);
+          settings = strchr(settings,':')+1;
+          colormode = atol(settings);
+          Serial.printf("Steeings: %s => set_d: %f  colormode: %d\n",msg.data().c_str(),pid_set,colormode);
         }
         if(msg.isBinary()){
           //Image
@@ -311,16 +316,39 @@ void loop() {
           unsigned long start = micros();
           fmt2rgb888((uint8_t*)msg.data().c_str(),msg.data().length(),PIXFORMAT_JPEG,rgbbufer);
                     
-          buffer[1]=((rgbbufer[0]&0xF0)>>4) | ((rgbbufer[1]&0xF0)) | ((rgbbufer[2]&0xF0)<<4) | (1<<12);
-          buffer[0]=((rgbbufer[3]&0xF0)>>4) | ((rgbbufer[4]&0xF0)) | ((rgbbufer[5]&0xF0)<<4);
-          
-          uint32_t j=6;
-          for(uint32_t i=2;i<B_LEN;i+=2){    
-            buffer[i+1]=((rgbbufer[j+0]&0xF0)>>4) | ((rgbbufer[j+1]&0xF0)) | ((rgbbufer[j+2]&0xF0)<<4);
-            buffer[i+0]=((rgbbufer[j+3]&0xF0)>>4) | ((rgbbufer[j+4]&0xF0)) | ((rgbbufer[j+5]&0xF0)<<4);
-            j+=6;
-          }
-
+          uint32_t bi=0;          
+          for (int y=0;y<131;y++){
+            for (int x=0;x<131;x++){
+                  if((x<19 || x>=131-19) && (y<19 || y>=131-19)){
+                      //Dont use that PIXEL  => we do not use it anyway ...                  
+                      continue;
+                  } 
+                  uint32_t i=(x+y*131)*3;
+                  switch(colormode){
+                    default:
+                    case 0:
+                      buffer[bi^1]=((bi==0?1:0)<<12) | ((rgbbufer[i+0]&0xF0)<<4) | ((rgbbufer[i+1]&0xF0)) | ((rgbbufer[i+2]&0xF0)>>4);
+                      break;
+                    case 1:
+                      buffer[bi^1]=((bi==0?1:0)<<12) | ((rgbbufer[i+0]&0xF0)<<4) | ((rgbbufer[i+2]&0xF0)) | ((rgbbufer[i+1]&0xF0)>>4);
+                      break;
+                    case 2:
+                      buffer[bi^1]=((bi==0?1:0)<<12) | ((rgbbufer[i+1]&0xF0)<<4) | ((rgbbufer[i+0]&0xF0)) | ((rgbbufer[i+2]&0xF0)>>4);
+                      break;
+                    case 3:
+                      buffer[bi^1]=((bi==0?1:0)<<12) | ((rgbbufer[i+1]&0xF0)<<4) | ((rgbbufer[i+2]&0xF0)) | ((rgbbufer[i+0]&0xF0)>>4);
+                      break;
+                    case 4:
+                      buffer[bi^1]=((bi==0?1:0)<<12) | ((rgbbufer[i+2]&0xF0)<<4) | ((rgbbufer[i+0]&0xF0)) | ((rgbbufer[i+1]&0xF0)>>4);
+                      break;
+                    case 5:
+                      buffer[bi^1]=((bi==0?1:0)<<12) | ((rgbbufer[i+2]&0xF0)<<4) | ((rgbbufer[i+1]&0xF0)) | ((rgbbufer[i+0]&0xF0)>>4);
+                      break;
+                  }
+                  bi++;
+              }
+          }                    
+                    
           start_I2S();
 
           unsigned long ende = micros();

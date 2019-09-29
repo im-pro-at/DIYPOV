@@ -1,23 +1,30 @@
-#define LEDS 1
-#define MOTOR 2
-#define TASTER 2
+#define LEDS 5
+#define MOTOR 4
+#define TASTER 14
 
-#include <WiFi.h>
+#include <ESP8266WiFi.h>
 
 void setup() {
   // Start Serial port
   Serial.begin(115200);
   
+  pinMode(BUILTIN_LED, OUTPUT);
+  digitalWrite(BUILTIN_LED, HIGH); 
   pinMode(LEDS, OUTPUT);
   digitalWrite(LEDS, LOW); 
   pinMode(MOTOR, OUTPUT);
   digitalWrite(MOTOR, LOW); 
   pinMode(TASTER, INPUT_PULLUP);
+  
+  delay(1000);
+  
+  Serial.println("Hallo!");
 }
 
 uint8_t running=0;
-WiFiClient client;
+WiFiClient motorClient;
 unsigned long lastUpdate=0;
+IPAddress dest_addr( 192, 168, 4, 1 );
 
 void loop() {  
 
@@ -25,21 +32,25 @@ void loop() {
     analogWrite(MOTOR,0);            
   }
         
-  if(digitalRead()==LOW){
+  if(digitalRead(TASTER)==LOW){
     if(running){
       running=0;
       Serial.println("OFF!");
       WiFi.disconnect();
+      digitalWrite(BUILTIN_LED, HIGH);
       digitalWrite(LEDS, LOW); 
-      delay(1000);      
+      Serial.println("delay 5000");
+      delay(5000);      
     }
     else{
       running=1;
       Serial.println("Connecting ... ");
+      digitalWrite(BUILTIN_LED, LOW);
       digitalWrite(LEDS, HIGH); 
+      WiFi.mode(WIFI_STA);
       WiFi.begin("POV Display");
-      delay(1000);      
-
+      Serial.println("delay 5000");
+      delay(5000);      
     }
     
   }
@@ -47,25 +58,25 @@ void loop() {
   if(running){
       if (WiFi.status() != WL_CONNECTED) 
       {
-          Serial.println("Wait for Wifi ...");
-          delay(100);      
+        Serial.println("Wait for Wifi ...");
+        delay(100);      
       }
-      else if(motorClient && motorClient.connected()){
+      else if(motorClient.connected()){
         if(motorClient.available()){
           //get data from the telnet client and push it to the UART
           if(motorClient.available()){
-            uint8_t pwm=0
+            uint8_t pwm=0;
             while(motorClient.available()) pwm=motorClient.read();
-            Serial.printf("PWM: %d",pwm);
-            analogWrite(MOTOR,pwm*2);            
+            Serial.printf("PWM: %d\n",pwm);
+            analogWrite(MOTOR,pwm*4);            
             lastUpdate= millis()+200; // we should get a pwm update ever 100ms to 200ms is too long 
           }
         }            
       }
       else{
         Serial.println("Connecting TCP ...");
-        analogWrite(MOTOR,0);     // this can take some time => lay it save!       
-        if (!client.connect("192.168.4.1", 9999)) {
+        analogWrite(MOTOR,0);     // this can take some time => play it save!       
+        if (!motorClient.connect(dest_addr,9999)) {
             Serial.println("connection failed");
             delay(100);      
         }     
@@ -73,84 +84,6 @@ void loop() {
           Serial.println("Connected TCP!");          
         }
       }
-
-      Serial.println("");
-      Serial.println("WiFi connected");
-      Serial.println("IP address: ");
-      Serial.println(WiFi.localIP());
-      
-    
+        
   }
-}
-
-
-/*
- *  This sketch sends data via HTTP GET requests to data.sparkfun.com service.
- *
- *  You need to get streamId and privateKey at data.sparkfun.com and paste them
- *  below. Or just customize this script to talk to other HTTP servers.
- *
- */
-
-void setup()
-{
-    Serial.begin(115200);
-    delay(10);
-
-    // We start by connecting to a WiFi network
-
-    Serial.println();
-    Serial.println();
-}
-
-int value = 0;
- WiFiClient client;
-void loop()
-{
-    delay(5000);
-    ++value;
-
-    Serial.print("connecting to ");
-    Serial.println(host);
-
-    // Use WiFiClient class to create TCP connections
-    WiFiClient client;
-    const int httpPort = 80;
-    if (!client.connect(host, httpPort)) {
-        Serial.println("connection failed");
-        return;
-    }
-
-    // We now create a URI for the request
-    String url = "/input/";
-    url += streamId;
-    url += "?private_key=";
-    url += privateKey;
-    url += "&value=";
-    url += value;
-
-    Serial.print("Requesting URL: ");
-    Serial.println(url);
-
-    // This will send the request to the server
-    client.print(String("GET ") + url + " HTTP/1.1\r\n" +
-                 "Host: " + host + "\r\n" +
-                 "Connection: close\r\n\r\n");
-    unsigned long timeout = millis();
-    while (client.available() == 0) {
-        if (millis() - timeout > 5000) {
-            Serial.println(">>> Client Timeout !");
-            client.stop();
-            return;
-        }
-    }
-
-    // Read all the lines of the reply from server and print them to Serial
-    while(client.available()) {
-        String line = client.readStringUntil('\r');
-        Serial.print(line);
-    }
-
-    Serial.println();
-    Serial.println("closing connection");
 }

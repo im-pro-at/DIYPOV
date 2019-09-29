@@ -117,6 +117,25 @@ const char INDEX_HTML[] PROGMEM = R"=====(
       <input type="range" min="10" max="100" value="80" id="quality_set" style="width: 500px;">
     </p>
     </p>
+      Rotatet: <span id="rotate_set_span"></span>
+    <p>
+    </p>
+      <input type="range" min="0" max="360" value="0" id="rotate_set" style="width: 500px;">
+    </p>
+    </p>
+      <input type="checkbox" id="mirror_set" value="mirror"> mirror<br>
+    </p>
+    <p>
+      Color Mode: 
+      <select id="color_mode">
+        <option value="0">RGB</option>
+        <option value="1">RBG</option>
+        <option value="2">GRB</option>
+        <option value="3">GBR</option>
+        <option value="4">BRG</option>
+        <option value="5">BGR</option>
+      </select> 
+    <p>
   </div>
 	<h1>Destination</h1>
   <div id="destination">
@@ -175,8 +194,9 @@ const char INDEX_HTML[] PROGMEM = R"=====(
           var status=evt.data.split(":");
           document.querySelector('#rps').innerHTML=status[1]; 
           // send set Values
-          console.log("SET:"+rps_set);
-          websocket.send("SET:"+rps_set);
+          var settings= "SET:"+rps_set+":"+color_mode;
+          console.log(settings);
+          websocket.send(settings);
         }
         runframeWorker(true);
       };
@@ -307,14 +327,24 @@ const char INDEX_HTML[] PROGMEM = R"=====(
     var ctxp = cp.getContext('2d');
     var imgp = new Image;
     imgp.onload = function(){
+      ctxp.save();
+      ctxp.translate(R/2,R/2);
+      ctxp.rotate((mirror?1:-1)*rotate*Math.PI/180);
+      if(mirror) ctxp.scale(-1, 1);
+      ctxp.translate(-R/2,-R/2);      
+      
       ctxp.drawImage(imgp,0,0); // Or at whatever offset you like
+      ctxp.restore();
     };
     var ticks=0;
     var bandwith=0;
     var mode ="fill";
+    var color_mode =0;
     var quality;
     var fps_set;
     var rps_set;
+    var rotate;
+    var mirror;
     
     
     var lastframesendtime=0;
@@ -338,6 +368,11 @@ const char INDEX_HTML[] PROGMEM = R"=====(
           break;
       };
       
+      ctxr.save();
+      ctxr.translate(R/2,R/2);
+      ctxr.rotate(rotate*Math.PI/180);
+      if(mirror) ctxr.scale(-1, 1);
+      ctxr.translate(-R/2,-R/2);      
       
       switch(mode) {
         case "fill":
@@ -368,7 +403,7 @@ const char INDEX_HTML[] PROGMEM = R"=====(
         default:
           ctxr.drawImage(source, 0, 0, sw,sh, 0, 0, R, R);
       }       
-      
+      ctxr.restore();
       //get jpeg:
       var image_src= cr.toDataURL("image/jpeg",quality);
       
@@ -407,8 +442,10 @@ const char INDEX_HTML[] PROGMEM = R"=====(
     
     setInterval(function(){
       //update Mode
-      var e =document.querySelector('#mode');
-      mode=e.options[e.selectedIndex].value;
+      var modee =document.querySelector('#mode');      
+      mode=modee.options[modee.selectedIndex].value;
+      var colore =document.querySelector('#color_mode');      
+      color_mode=colore.options[colore.selectedIndex].value;
       if(ws_open){
         document.querySelector('#status').innerHTML="ONLINE";        
         document.querySelector('#fps').innerHTML=ticks;        
@@ -438,9 +475,19 @@ const char INDEX_HTML[] PROGMEM = R"=====(
       quality= document.querySelector('#quality_set').value/100;
       document.querySelector('#quality_set_span').innerHTML = quality.toFixed(2);
     });
+    document.querySelector('#rotate_set').addEventListener('input',function() {
+      rotate= document.querySelector('#rotate_set').value;
+      document.querySelector('#rotate_set_span').innerHTML = rotate;
+    });
+    document.querySelector('#mirror_set').addEventListener('input',function() {
+      mirror= document.querySelector('#mirror_set').checked;
+      console.log("Mirro ",mirror);
+    });
     document.querySelector('#rps_set').dispatchEvent(new Event('input'));
     document.querySelector('#fps_set').dispatchEvent(new Event('input'));
     document.querySelector('#quality_set').dispatchEvent(new Event('input'));
+    document.querySelector('#rotate_set').dispatchEvent(new Event('input'));
+    document.querySelector('#mirror_set').dispatchEvent(new Event('input'));
         
         
         
